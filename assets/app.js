@@ -1,3 +1,5 @@
+
+
 $(function () {
     // listen for clicks on search button to call the handleSearch button
     $("#search-button").on("click", handleSearch);
