@@ -5,6 +5,8 @@
     border-bottom: 10px solid black;
 }
 
-#Current-Forecast{
-    float: left;
+.city-div {
+    border: 1px solid lightblue;
+    border-radius: 0.25rem;
+    padding-left: 1rem;
 }
