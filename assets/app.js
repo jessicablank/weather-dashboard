@@ -81,15 +81,15 @@ function getCurrentForecast() {
                 var temp = (results[i].main.temp - 273.15) * 1.80 + 32;
                 var tempF = Math.floor(temp);
 
-                var card = $("<div>").addClass("card col-md-2 ml-4 bg-primary text-white");
+                var card = $("<div>").addClass("card col-md-2 ml-4 bg-light text-black");
                 var cardBody = $("<div>").addClass("card-body p-3 forecastBody")
-                var cityDate = $("<h4>").addClass("card-title").text(date.toLocaleDateString('en-US'));
+                var cityDate = $("<h4>").addClass("card-title").text(moment.unix(results[i].dt).utc().format("L"));
                 var temperature = $("<p>").addClass("card-text forecastTemp").text("Temperature: " + tempF + " °F");
                 var humidity = $("<p>").addClass("card-text forecastHumidity").text("Humidity: " + results[i].main.humidity + "%");
-
                 var image = $("<img>").attr("src", "https://openweathermap.org/img/w/" + results[i].weather[0].icon + ".png")
+                var wind = $("<p>").addClass("card-text current-wind").text("Wind Speed: " + results[i].wind.speed + " MPH")
 
-                cardBody.append(cityDate, image, temperature, humidity);
+                cardBody.append(cityDate, image, temperature, humidity, wind);
                 card.append(cardBody);
                 $("#forecast").append(card);
 

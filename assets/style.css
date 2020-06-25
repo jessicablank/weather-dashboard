@@ -1,5 +1,6 @@
 .jumbotron{
     text-align: center;
+    font-weight: bold;
     background-image: url("pictures/weather.png");
     border-radius: 0;
     border-bottom: 10px solid black;
@@ -15,4 +16,8 @@ body{
 
 .show {
     display: block;
+}
+
+#forecastH5{
+    font-size: 2rem;
 }
