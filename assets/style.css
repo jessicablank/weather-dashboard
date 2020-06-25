@@ -22,27 +22,3 @@ body{
     font-size: 2rem;
     border-bottom: 2px solid black;
 }
-.uvGreen {
-    background-color: #656DBD;
-    border-radius: 5px;
-}
-
-.uvYellow {
-    background-color: lightyellow;
-    border-radius: 5px;
-}
-
-.uvOrange {
-    background-color: lightsalmon;
-    border-radius: 5px;
-}
-
-.uvRed {
-    background-color: #656DBD;
-    border-radius: 5px;
-}
-
-.uvPurple {
-    background-color: #656DBD;
-    border-radius: 5px;
-}
