@@ -1,18 +1,17 @@
 var APIKey = "&appid=085c19b21e169a594fa99752c60ac8c8";
+var m = moment();
 
 var date = new Date();
+
+
 
 $("#searchBtn").on("click", function () {
     event.preventDefault();
     $('#forecastH5').addClass('show');
-
-    //Get the City from User
     city = $("#searchTerm").val();
-
-    //Clear input box
     $("#searchTerm").val("");
 
-    
+
     var queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + city + APIKey;
 
     $.ajax({
@@ -37,7 +36,7 @@ function getCurrentConditions(response) {
 
     $('#currentCity').empty();
 
-     
+
     var card = $("<div>").addClass("card");
     var cardBody = $("<div>").addClass("card-body");
     var city = $("<h4>").addClass("card-title").text(response.name);
@@ -45,12 +44,12 @@ function getCurrentConditions(response) {
     var temperature = $("<p>").addClass("card-text current-temp").text("Temperature: " + tempF + " °F");
     var humidity = $("<p>").addClass("card-text current-humidity").text("Humidity: " + response.main.humidity + "%");
     var wind = $("<p>").addClass("card-text current-wind").text("Wind Speed: " + response.wind.speed + " MPH");
-    var image = $("<img>").attr("src", "https://openweathermap.org/img/w/" + response.weather[0].icon + ".png")
-    
+    var image = $("<img>").attr("src", "https://openweathermap.org/img/w/" + response.weather[0].icon + ".png");
+    var lat = $("<p>").addClass("card-text lat").text("Latitude: " + response.coord.lat);
+    var lon = $("<p>").addClass("card-text lon").text("Longitude: " + response.coord.lon);
 
- 
     city.append(cityDate, image)
-    cardBody.append(city, temperature, humidity, wind);
+    cardBody.append(city, temperature, humidity, wind, lat, lon);
     card.append(cardBody);
     $("#currentCity").append(card)
 
@@ -66,18 +65,11 @@ function getCurrentForecast() {
         $('#forecast').empty();
 
         var results = response.list;
-       
-
 
         for (var i = 0; i < results.length; i++) {
 
-            var day = Number(results[i].dt_txt.split('-')[2].split(' ')[0]);
-            var hour = results[i].dt_txt.split('-')[2].split(' ')[1];
-           
-
             if (results[i].dt_txt.indexOf("12:00:00") !== -1) {
 
-                // get the temperature and convert to fahrenheit 
                 var temp = (results[i].main.temp - 273.15) * 1.80 + 32;
                 var tempF = Math.floor(temp);
 
@@ -89,6 +81,7 @@ function getCurrentForecast() {
                 var image = $("<img>").attr("src", "https://openweathermap.org/img/w/" + results[i].weather[0].icon + ".png")
                 var wind = $("<p>").addClass("card-text current-wind").text("Wind Speed: " + results[i].wind.speed + " MPH")
 
+
                 cardBody.append(cityDate, image, temperature, humidity, wind);
                 card.append(cardBody);
                 $("#forecast").append(card);
@@ -98,4 +91,3 @@ function getCurrentForecast() {
     });
 
 }
-
