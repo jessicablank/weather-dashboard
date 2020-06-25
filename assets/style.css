@@ -5,10 +5,14 @@
     border-bottom: 10px solid black;
 }
 
-#todayDisplay{
-    border-radius: 0.25rem;
-    padding-left: 1rem;
-    width: 50rem;
-   
+body{
+    background-color: aliceblue;
+}
 
+.hide {
+    display: none;
+}
+
+.show {
+    display: block;
 }
