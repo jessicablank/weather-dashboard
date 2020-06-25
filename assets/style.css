@@ -5,8 +5,10 @@
     border-bottom: 10px solid black;
 }
 
-.city-div {
-    border: 1px solid lightblue;
+#todayDisplay{
     border-radius: 0.25rem;
     padding-left: 1rem;
+    width: 50rem;
+   
+
 }
