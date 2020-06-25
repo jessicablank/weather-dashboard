@@ -2,10 +2,8 @@
 ## A Simple 5 Day Weather Forecasting App
 
 [link to deployed app](https://jessicablank.github.io/weather-dashboard/)
-[Link to code](https://github.com/jessicablank/weather-dashboard)
 
-
-![Screen shot of landing page](weather-dashboard\assets\pictures\opening page screenshot.PNG)
+![Screen shot of landing page](https://github.com/jessicablank/weather-dashboard/blob/master/assets/pictures/opening%20page%20screenshot.PNG)
 
 ![Screen shot of page in use](https://github.com/jessicablank/weather-dashboard/blob/master/assets/pictures/after%20search%20screenshot.PNG)
 
