@@ -10,15 +10,4 @@ body{
     background-color: aliceblue;
 }
 
-.hide {
-    display: none;
-}
 
-.show {
-    display: block;
-}
-
-#forecastH5{
-    font-size: 2rem;
-    border-bottom: 2px solid black;
-}
