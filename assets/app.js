@@ -107,8 +107,8 @@ $(function () {
             // only look at forecasts around 3:00pm
             if (data.list[i].dt_txt.indexOf("15:00:00") !== -1) {
               // create html elements for a bootstrap card
-              var col = $("<div>").addClass("col-md-2");
-              var card = $("<div>").addClass("card bg-primary text-white");
+              var col = $("<div>").addClass("card-group col-md-2");
+              var card = $("<div>").addClass("card bg-info text-white");
               var body = $("<div>").addClass("card-body p-2");
   
               var title = $("<h5>")
