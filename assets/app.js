@@ -9,7 +9,7 @@ $(function () {
       // clear input box
       $("#search-value").val("");
   
-      (searchValue);
+      searchWeather(searchValue);
     });
   
     $(".history").on("click", "li", function () {
@@ -117,7 +117,7 @@ $(function () {
   
               var img = $("<img>").attr(
                 "src",
-                "http://openweathermap.org/img/w/" +
+                "https://openweathermap.org/img/w/" +
                   data.list[i].weather[0].icon +
                   ".png"
               );
